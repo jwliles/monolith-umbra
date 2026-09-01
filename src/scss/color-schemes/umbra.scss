@@ -1,0 +1,156 @@
+/*
+Umbra
+Chalk on wet asphalt
+
+Palette tokens are kept separate from their semantic assignments so that
+components can depend on the shared Minimal/Obsidian interface below.
+*/
+
+:root {
+	--umbra-base: #0a0d10;
+	--umbra-surface: #0f1418;
+	--umbra-border: #141a20;
+	--umbra-crimson: #b36c70;
+	--umbra-cream: #d4c8a8;
+	--umbra-sage: #8aa890;
+	--umbra-butter: #a89868;
+	--umbra-ochre: #b89968;
+	--umbra-lavender: #a896c0;
+	--umbra-dust: #88a4b8;
+}
+
+.theme-dark {
+	/* Umbra palette interface */
+	--base-h: 210;
+	--base-s: 23%;
+	--base-l: 5%;
+	--accent-h: 357;
+	--accent-s: 28%;
+	--accent-l: 56%;
+
+	--bg1: var(--umbra-base);
+	--bg2: var(--umbra-surface);
+	--bg3: rgba(212, 200, 168, 0.06);
+	--ui1: var(--umbra-border);
+	--ui2: #202830;
+	--ui3: #303a43;
+	--tx1: var(--umbra-cream);
+	--tx2: #9a907a;
+	--tx3: #6e6758;
+	--tx4: #b8ad91;
+	--ax1: var(--umbra-crimson);
+	--ax2: #c87c80;
+	--ax3: #9f5d61;
+	--hl1: rgba(179, 108, 112, 0.25);
+	--hl2: rgba(184, 153, 104, 0.28);
+	--sp1: var(--umbra-base);
+
+	/* Status and palette colors */
+	--color-red-rgb: 179, 108, 112;
+	--color-orange-rgb: 168, 152, 104;
+	--color-yellow-rgb: 184, 153, 104;
+	--color-green-rgb: 138, 168, 144;
+	--color-cyan-rgb: 136, 164, 184;
+	--color-blue-rgb: 136, 164, 184;
+	--color-purple-rgb: 168, 150, 192;
+	--color-pink-rgb: 200, 138, 142;
+	--color-red: var(--umbra-crimson);
+	--color-orange: var(--umbra-butter);
+	--color-yellow: var(--umbra-ochre);
+	--color-green: var(--umbra-sage);
+	--color-cyan: var(--umbra-dust);
+	--color-blue: var(--umbra-dust);
+	--color-purple: var(--umbra-lavender);
+	--color-pink: #c88a8e;
+	--background-modifier-error: #8a4f53;
+	--background-modifier-error-hover: #9a5f63;
+	--background-modifier-success: #5a7a4c;
+	--text-error: #c87579;
+	--text-success: var(--umbra-sage);
+
+	/* Editor and syntax highlighting */
+	--code-background: var(--umbra-surface);
+	--code-block-background: var(--umbra-surface);
+	--code-normal: var(--umbra-cream);
+	--code-comment: #6e6758;
+	--code-function: var(--umbra-butter);
+	--code-important: #c88a8e;
+	--code-keyword: var(--umbra-lavender);
+	--code-operator: var(--umbra-ochre);
+	--code-property: var(--umbra-dust);
+	--code-punctuation: #9a907a;
+	--code-string: var(--umbra-sage);
+	--code-tag: #c88a8e;
+	--code-value: var(--umbra-ochre);
+	--code-variable: var(--umbra-dust);
+	--cursor-color: var(--umbra-crimson);
+	--cursor-width: 4px;
+}
+
+.theme-light {
+	/* Umbra palette interface */
+	--base-h: 30;
+	--base-s: 11%;
+	--base-l: 93%;
+	--accent-h: 348;
+	--accent-s: 55%;
+	--accent-l: 28%;
+
+	--bg1: #eeecea;
+	--bg2: #e6e2de;
+	--bg3: rgba(40, 34, 28, 0.06);
+	--ui1: #d8d2cc;
+	--ui2: #ccc6c0;
+	--ui3: #aaa29a;
+	--tx1: #28221c;
+	--tx2: #585048;
+	--tx3: #888078;
+	--tx4: #403830;
+	--ax1: #6e2030;
+	--ax2: #5a1828;
+	--ax3: #843044;
+	--hl1: rgba(110, 32, 48, 0.18);
+	--hl2: rgba(184, 153, 104, 0.3);
+	--sp1: #eeecea;
+
+	/* Status and palette colors */
+	--color-red-rgb: 110, 32, 48;
+	--color-orange-rgb: 110, 52, 24;
+	--color-yellow-rgb: 106, 72, 32;
+	--color-green-rgb: 40, 88, 40;
+	--color-cyan-rgb: 28, 92, 84;
+	--color-blue-rgb: 30, 60, 84;
+	--color-purple-rgb: 74, 40, 72;
+	--color-pink-rgb: 120, 40, 88;
+	--color-red: #6e2030;
+	--color-orange: #6e3418;
+	--color-yellow: #6a4820;
+	--color-green: #285828;
+	--color-cyan: #1c5c54;
+	--color-blue: #1e3c54;
+	--color-purple: #4a2848;
+	--color-pink: #782858;
+	--background-modifier-error: #782030;
+	--background-modifier-error-hover: #902838;
+	--background-modifier-success: #285828;
+	--text-error: #782030;
+	--text-success: #285828;
+
+	/* Editor and syntax highlighting */
+	--code-background: #e6e2de;
+	--code-block-background: #dedad4;
+	--code-normal: #28221c;
+	--code-comment: #782858;
+	--code-function: #143868;
+	--code-important: #6e2030;
+	--code-keyword: #3e1878;
+	--code-operator: #6e3418;
+	--code-property: #145858;
+	--code-punctuation: #585048;
+	--code-string: #1e4c18;
+	--code-tag: #6e3418;
+	--code-value: #6a4820;
+	--code-variable: #145268;
+	--cursor-color: #6e2030;
+	--cursor-width: 4px;
+}

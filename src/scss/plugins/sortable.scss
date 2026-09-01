@@ -1,8 +1,7 @@
 /* Sortable plugin */
 
 body .markdown-preview-view th,
-body .table-view-table > thead > tr > th,
-body .markdown-source-view.mod-cm6 .dataview.table-view-table thead.table-view-thead tr th {
+body .table-view-table > thead > tr > th {
 	cursor:var(--cursor);
 	background-image:none;
 }

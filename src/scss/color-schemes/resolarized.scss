@@ -1,0 +1,65 @@
+/* Resolarized — ice over deep water. Adapted from the former Monolith theme. */
+:root {
+	--resol-depth: #000f15;
+	--resol-surface: #00161d;
+	--resol-panel: #001b24;
+	--resol-border: #082f3a;
+	--resol-text: #89999b;
+	--resol-muted: #536a72;
+	--resol-faint: #3b525b;
+	--resol-yellow: #a4872b;
+	--resol-orange: #a45c3d;
+	--resol-red: #ae5e64;
+	--resol-magenta: #a16184;
+	--resol-violet: #7779a8;
+	--resol-blue: #5c86a8;
+	--resol-cyan: #519491;
+	--resol-green: #768a3b;
+}
+
+.theme-dark.umbra-resolarized {
+	--base-h: 196; --base-s: 100%; --base-l: 4%;
+	--accent-h: 207; --accent-s: 32%; --accent-l: 51%;
+	--bg1: var(--resol-depth); --bg2: var(--resol-surface);
+	--bg3: rgba(92, 134, 168, 0.1);
+	--ui1: var(--resol-panel); --ui2: var(--resol-border); --ui3: #0d3a46;
+	--tx1: var(--resol-text); --tx2: var(--resol-muted);
+	--tx3: var(--resol-faint); --tx4: #6e8288;
+	--ax1: var(--resol-blue); --ax2: #6d98ad; --ax3: #4d7596;
+	--hl1: rgba(85, 127, 159, 0.24); --hl2: rgba(164, 135, 43, 0.2);
+	--sp1: var(--resol-depth);
+	--color-red: var(--resol-red); --color-orange: var(--resol-orange);
+	--color-yellow: var(--resol-yellow); --color-green: var(--resol-green);
+	--color-cyan: var(--resol-cyan); --color-blue: var(--resol-blue);
+	--color-purple: var(--resol-violet); --color-pink: var(--resol-magenta);
+	--code-background: var(--resol-panel); --code-block-background: #031f28;
+	--code-normal: var(--resol-text); --code-comment: var(--resol-faint);
+	--code-function: var(--resol-blue); --code-important: var(--resol-red);
+	--code-keyword: var(--resol-violet); --code-operator: var(--resol-yellow);
+	--code-property: var(--resol-cyan); --code-punctuation: var(--resol-muted);
+	--code-string: var(--resol-green); --code-tag: var(--resol-orange);
+	--code-value: var(--resol-yellow); --code-variable: var(--resol-blue);
+	--cursor-color: var(--resol-blue);
+}
+
+.theme-light.umbra-resolarized {
+	--base-h: 41; --base-s: 44%; --base-l: 88%;
+	--accent-h: 205; --accent-s: 39%; --accent-l: 35%;
+	--bg1: #efe7d4; --bg2: #e7ddc8; --bg3: rgba(54, 95, 122, 0.07);
+	--ui1: #d9cfba; --ui2: #c7bba5; --ui3: #b9ab94;
+	--tx1: #4f6065; --tx2: #718184; --tx3: #9aa2a0; --tx4: #3e5056;
+	--ax1: #365f7a; --ax2: #274d66; --ax3: #47718c;
+	--hl1: rgba(54, 95, 122, 0.17); --hl2: rgba(111, 93, 34, 0.17);
+	--sp1: #efe7d4;
+	--color-red: #783f47; --color-orange: #784934; --color-yellow: #6f5d22;
+	--color-green: #4f5f28; --color-cyan: #386965; --color-blue: #365f7a;
+	--color-purple: #555a80; --color-pink: #75465f;
+	--code-background: #d9cfba; --code-block-background: #cec2ab;
+	--code-normal: var(--tx1); --code-comment: #8c9695;
+	--code-function: var(--color-blue); --code-important: var(--color-red);
+	--code-keyword: var(--color-purple); --code-operator: var(--color-yellow);
+	--code-property: var(--color-cyan); --code-punctuation: var(--tx2);
+	--code-string: var(--color-green); --code-tag: var(--color-orange);
+	--code-value: var(--color-yellow); --code-variable: var(--color-blue);
+	--cursor-color: var(--ax1);
+}

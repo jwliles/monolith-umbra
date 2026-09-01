@@ -4,7 +4,7 @@ body {
 		calc(50% - var(--line-width)/2),
 		calc(50% - var(--max-width)/2) );
 	--content-line-width: min(var(--line-width), var(--max-width));
-	--map-header-padding: 2px;	
+	--map-header-padding: 2px;
 }
 
 /* Line widths ------------------------------------ */
@@ -83,8 +83,8 @@ body {
 /* Content rules ------------------------------------
 
    The benefit of this approach is that it covers all levels
-   of specificity wherever the helper is applied: global, 
-   per file, and element-level. 
+   of specificity wherever the helper is applied: global,
+   per file, and element-level.
 
    It means we don't have to write long specific selectors
    like `.table-100.markdown-source-view...`
@@ -96,8 +96,6 @@ body {
 	--table-width: auto;
 	--table-margin: inherit;
 	--table-wrapper-width: fit-content;
-
-	--container-dataview-table-width: var(--line-width);
 
 	--container-img-width: var(--line-width);
 	--container-img-max-width: var(--max-width);
@@ -127,7 +125,6 @@ body {
 	.wide {
 		--line-width: var(--line-width-wide);
 		--container-table-width: var(--line-width-wide);
-		--container-dataview-table-width: var(--line-width-wide);
 		--container-img-width: var(--line-width-wide);
 		--container-iframe-width: var(--line-width-wide);
 		--container-map-width: var(--line-width-wide);
@@ -136,21 +133,11 @@ body {
 	.max {
 		--line-width: var(--max-width);
 		--container-table-width: var(--max-width);
-		--container-dataview-table-width: var(--max-width);
 		--container-img-width: var(--max-width);
 		--container-iframe-width: var(--max-width);
 		--container-map-width: var(--max-width);
 		--container-chart-width: var(--max-width);
 	}
-}
-
-table.dataview {
-	--table-min-width: min(var(--line-width),var(--max-width));
-}
-
-.cards table.dataview {
-	--table-width: 100%;
-	--table-min-width: none;
 }
 
 body {
@@ -167,7 +154,6 @@ body {
 .maximize-tables-auto {
 	--container-table-max-width: 100%;
 	--container-table-width: 100%;
-	--container-dataview-table-width: 100%;
 	--container-table-margin: 0;
 	--table-drag-padding: var(--table-drag-space) 0;
 
@@ -175,12 +161,6 @@ body {
 	--table-margin: var(--content-margin-start) auto;
 	--table-width: auto;
 
-	.cards {
-		--container-table-max-width: var(--max-width);
-	}
-	.cards .block-language-dataview {
-		--table-margin: auto;
-	}
 }
 
 .maximize-tables {
@@ -207,19 +187,16 @@ body {
 }
 .table-wide {
 	--container-table-width: var(--line-width-wide);
-	--container-dataview-table-width: var(--line-width-wide);
 	--container-table-margin: auto;
 	--table-edge-cell-padding-first: 0px;}
 .table-max {
 	--container-table-width: var(--max-width);
 	--container-table-max-width: calc(var(--max-width) + var(--table-drag-space)*2);
-	--container-dataview-table-width: var(--max-width);
 	--container-table-margin: auto;
 	--table-edge-cell-padding-first: 0px;
 	--table-margin: 0;}
 .table-100 {
 	--container-table-width: 100%;
-	--container-dataview-table-width: 100%;
 	--container-table-max-width: 100%;
 	--container-table-margin: 0;
 	--table-edge-cell-padding-first: 16px;
@@ -227,7 +204,6 @@ body {
 	--table-margin: 0;
 	--table-drag-padding: var(--table-drag-space) 0;
 	--table-wrapper-width: min(fit-content, 100%);
-	--bases-cards-embed-padding: 0 12px;
 	--bases-header-padding-end: var(--size-4-2);
 	--bases-header-padding-start: var(--size-4-2);
 
@@ -342,9 +318,8 @@ body {
 		width: var(--table-wrapper-width);
 	}
 	> .bases-embed,
-	> div:has(:is(.block-language-base, .bases-embed)),
-	> :has(> :is(.block-language-dataview, .block-language-dataviewjs) table) {
-		width: var(--container-dataview-table-width);
+	> div:has(:is(.block-language-base, .bases-embed)) {
+		width: var(--container-table-width);
 		max-width:var(--container-table-max-width);
 	}
 
@@ -354,20 +329,6 @@ body {
 		margin-inline: var(--table-margin);
 		min-width: var(--table-min-width);
 	}
-	.block-language-dataviewjs {
-		> :is(p,h1,h2,h3,h4,h5,h6) {
-			width: var(--line-width);
-			margin-inline: var(--content-margin);
-		}
-		> .dataview-error {
-			margin: 0 auto;
-			width: var(--content-line-width);
-		}
-	}
-	.dataview.dataview-error-box {
-		margin-inline: var(--table-margin);
-	}
-
 	// Images
 	> .image-embed {
 		padding-top: 0.25rem;
@@ -390,7 +351,7 @@ body {
 	}
 
 	// Charts
-	div:has(>.block-language-dataviewjs canvas, >.block-language-chart) {
+	div:has(>.block-language-chart) {
 		width: var(--container-chart-width);
 		max-width:var(--container-chart-max-width);
 

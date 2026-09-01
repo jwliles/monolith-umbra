@@ -1,6 +1,6 @@
-// Minimal Theme build script
+// Monolith Umbra Theme build script
 //
-// Compiles src/scss/index.scss into theme.css (compressed) and Minimal.css
+// Compiles src/scss/index.scss into theme.css (compressed) and Monolith-Umbra.css
 // (expanded), then copies theme.css into the test vault defined by
 // OBSIDIAN_PATH in .env.
 //
@@ -18,6 +18,20 @@ const CSS_DIR = path.join(SRC, 'css');
 const LICENSE = path.join(CSS_DIR, 'license.css');
 const PLUGIN_COMPAT = path.join(CSS_DIR, 'plugin-compatibility.css');
 const STYLE_SETTINGS = path.join(CSS_DIR, 'style-settings.css');
+const FONT_DIR = path.join(SRC, 'fonts');
+const FONT_LICENSE = path.join(FONT_DIR, 'OFL-1.1.md');
+
+function embeddedFonts() {
+	const faces = [
+		['Coastal Quattro', 'CoastalQuattro-Regular.woff2'],
+		['Coastal Mono', 'CoastalMono-Regular.woff2'],
+	].map(([family, file]) => {
+		const data = fs.readFileSync(path.join(FONT_DIR, file)).toString('base64');
+		return `@font-face {\n  font-family: '${family}';\n  src: url('data:font/woff2;base64,${data}') format('woff2');\n  font-weight: 400;\n  font-style: normal;\n  font-display: swap;\n}`;
+	});
+	const ofl = fs.readFileSync(FONT_LICENSE, 'utf8').replaceAll('*/', '* /');
+	return `/*\nCoastal Mono and Coastal Quattro are custom builds of Iosevka 34.7.0.\n${ofl}\n*/\n${faces.join('\n')}`;
+}
 
 function loadEnv() {
 	try {
@@ -46,12 +60,13 @@ function build() {
 	const license = fs.readFileSync(LICENSE, 'utf8');
 	const pluginCompat = fs.readFileSync(PLUGIN_COMPAT, 'utf8');
 	const styleSettings = fs.readFileSync(STYLE_SETTINGS, 'utf8');
+	const fonts = embeddedFonts();
 
-	const themeCss = [license, expanded, pluginCompat, styleSettings].join('\n');
-	const minimalCss = [license, expanded, pluginCompat, styleSettings].join('\n');
+	const themeCss = [license, fonts, expanded, pluginCompat, styleSettings].join('\n');
+	const expandedCss = [license, fonts, expanded, pluginCompat, styleSettings].join('\n');
 
 	fs.writeFileSync(path.join(__dirname, 'theme.css'), themeCss);
-	fs.writeFileSync(path.join(__dirname, 'Minimal.css'), minimalCss);
+	fs.writeFileSync(path.join(__dirname, 'Monolith-Umbra.css'), expandedCss);
 
 	if (process.env.OBSIDIAN_PATH && process.env.HOME) {
 		const dest = path.join(process.env.HOME, process.env.OBSIDIAN_PATH, 'theme.css');

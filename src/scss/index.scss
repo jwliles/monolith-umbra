@@ -46,7 +46,6 @@
 @use 'features/animations';
 @use 'features/block-width';
 @use 'features/borders';
-@use 'features/cards';
 @use 'features/checklist-icons';
 @use 'features/colorful-active-states';
 @use 'features/colorful-frame';
@@ -80,7 +79,6 @@
 @use 'plugins/calendar';
 @use 'plugins/charts';
 @use 'plugins/cmenu';
-@use 'plugins/dataview';
 @use 'plugins/git';
 @use 'plugins/hider';
 @use 'plugins/kanban';
@@ -90,17 +88,8 @@
 @use 'plugins/zoom';
 
 /* Color schemes */
-@use 'color-schemes/atom';
-@use 'color-schemes/ayu';
-@use 'color-schemes/catppuccin';
-@use 'color-schemes/dracula';
-@use 'color-schemes/eink';
-@use 'color-schemes/everforest';
-@use 'color-schemes/flexoki';
-@use 'color-schemes/gruvbox';
-@use 'color-schemes/macos';
-@use 'color-schemes/nord';
-@use 'color-schemes/sky';
-@use 'color-schemes/rose-pine';
-@use 'color-schemes/solarized';
-@use 'color-schemes/things';
+@use 'color-schemes/umbra';
+@use 'color-schemes/resolarized';
+@use 'color-schemes/glacier';
+@use 'color-schemes/graphite';
+@use 'color-schemes/parchment';

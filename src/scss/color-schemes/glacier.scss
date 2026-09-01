@@ -1,0 +1,55 @@
+/* Glacier — ancient abyss and sun-bleached shelf. Adapted from Monolith. */
+:root {
+	--glacier-base: #060b0f; --glacier-surface: #0b1218;
+	--glacier-panel: #121b22; --glacier-border: #19252e;
+	--glacier-text: #788da0; --glacier-muted: #4f6070; --glacier-faint: #344350;
+	--glacier-cyan: #579a9c; --glacier-blue: #567fa9; --glacier-teal: #458777;
+	--glacier-purple: #7c72a8; --glacier-silt: #9a8452; --glacier-iron: #a2676b;
+}
+
+.theme-dark.umbra-glacier {
+	--base-h: 207; --base-s: 43%; --base-l: 5%;
+	--accent-h: 181; --accent-s: 29%; --accent-l: 48%;
+	--bg1: var(--glacier-surface); --bg2: var(--glacier-base);
+	--bg3: rgba(87, 154, 156, 0.08);
+	--ui1: var(--glacier-panel); --ui2: var(--glacier-border); --ui3: #202e3a;
+	--tx1: var(--glacier-text); --tx2: var(--glacier-muted);
+	--tx3: var(--glacier-faint); --tx4: #647b8c;
+	--ax1: var(--glacier-cyan); --ax2: #659c9c; --ax3: #478789;
+	--hl1: rgba(74, 123, 156, 0.2); --hl2: rgba(138, 124, 88, 0.15);
+	--sp1: var(--glacier-base);
+	--color-red: var(--glacier-iron); --color-orange: var(--glacier-silt);
+	--color-yellow: var(--glacier-silt); --color-green: var(--glacier-teal);
+	--color-cyan: var(--glacier-cyan); --color-blue: var(--glacier-blue);
+	--color-purple: var(--glacier-purple); --color-pink: var(--glacier-purple);
+	--code-background: var(--glacier-base); --code-block-background: var(--glacier-panel);
+	--code-normal: var(--tx1); --code-comment: var(--tx2);
+	--code-function: var(--color-blue); --code-important: var(--color-red);
+	--code-keyword: var(--color-purple); --code-operator: var(--color-yellow);
+	--code-property: var(--color-cyan); --code-punctuation: var(--tx4);
+	--code-string: var(--color-green); --code-tag: var(--color-blue);
+	--code-value: var(--color-yellow); --code-variable: var(--tx1);
+	--cursor-color: var(--ax1);
+}
+
+.theme-light.umbra-glacier {
+	--base-h: 207; --base-s: 17%; --base-l: 83%;
+	--accent-h: 183; --accent-s: 59%; --accent-l: 22%;
+	--bg1: #cbd3da; --bg2: #b9c4cc; --bg3: rgba(23, 86, 90, 0.08);
+	--ui1: #c2cbd2; --ui2: #a2b0bc; --ui3: #8fa0ad;
+	--tx1: #121e28; --tx2: #2f404f; --tx3: #4f6375; --tx4: #263744;
+	--ax1: #17565a; --ax2: #0b3333; --ax3: #24686c;
+	--hl1: rgba(42, 90, 90, 0.16); --hl2: rgba(92, 80, 50, 0.14);
+	--sp1: #cbd3da;
+	--color-red: #6b252b; --color-orange: #604d24; --color-yellow: #604d24;
+	--color-green: #205044; --color-cyan: #17565a; --color-blue: #24496b;
+	--color-purple: #45416f; --color-pink: #45416f;
+	--code-background: var(--bg2); --code-block-background: #bac5cc;
+	--code-normal: var(--tx1); --code-comment: var(--tx3);
+	--code-function: var(--color-blue); --code-important: var(--color-red);
+	--code-keyword: var(--color-purple); --code-operator: var(--color-yellow);
+	--code-property: var(--color-cyan); --code-punctuation: var(--tx2);
+	--code-string: var(--color-green); --code-tag: var(--color-blue);
+	--code-value: var(--color-yellow); --code-variable: var(--tx1);
+	--cursor-color: var(--ax1);
+}

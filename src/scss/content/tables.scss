@@ -11,7 +11,7 @@ body {
 
 /* Preview mode tables */
 .markdown-source-view.mod-cm6 table {
-	border-collapse: collapse; 
+	border-collapse: collapse;
 }
 .markdown-rendered th {
 	--table-header-size: var(--table-text-size);
@@ -63,8 +63,7 @@ body {
 
 /* Override Sortable plugin */
 .markdown-preview-view th,
-.table-view-table > thead > tr > th,
-.markdown-source-view.mod-cm6 .dataview.table-view-table thead.table-view-thead tr th {
+.table-view-table > thead > tr > th {
 	padding: var(--table-cell-padding);
 	&:first-child {
 		padding-inline-start: var(--table-edge-cell-padding-first);

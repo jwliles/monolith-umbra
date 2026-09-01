@@ -31,7 +31,7 @@
 	--table-edge-cell-padding-first: 8px;
 	--table-edge-cell-padding-last: 8px;
 }
-.col-alt .markdown-rendered:not(.cards) {
+.col-alt .markdown-rendered {
 	--table-column-alt-background: var(--background-table-rows);
 }
 
@@ -132,8 +132,8 @@
 	}
 }
 
-.row-lines:not(.table-lines) .markdown-source-view:not(.cards),
-.row-lines:not(.table-lines) .markdown-preview-view:not(.cards) {
+.row-lines:not(.table-lines) .markdown-source-view,
+.row-lines:not(.table-lines) .markdown-preview-view {
 	--table-row-last-border-width: 0;
 
 	table:not(.calendar) tbody > tr:not(:last-child) > td,
