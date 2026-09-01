@@ -151,13 +151,16 @@ defaults:
 
 ## Current progress
 
-Status as of 2026-08-07: the structural port and configuration reduction are
-well underway, but component work and systematic visual testing remain. The
-theme builds successfully with `npm run build`.
+Status as of 2026-08-31: the repository-side port is complete. The theme builds
+successfully with `npm run build`, and a representative test note and visual
+matrix are included under `tests/`. Final acceptance still requires running
+that matrix in Obsidian because application rendering cannot be validated by
+the build alone.
 
 ### Completed in source
 
-- Renamed the package, manifest, build output, and theme identity to Umbra.
+- Renamed the package, manifest, build output, repository, and theme identity
+  to Monolith Umbra while retaining Umbra as the default palette name.
 - Retained Minimal as the application, layout, mobile, core-plugin, and general
   compatibility foundation.
 - Added dark and light semantic adapters for five selectable schemes:
@@ -179,34 +182,26 @@ theme builds successfully with `npm run build`.
   headings; minimal status bar; trimmed filenames; workspace borders;
   underlined internal and external links; fast animations; pointer cursor; and
   disabled mobile toolbar.
+- Ported bordered highlights, isolated `kbd` styling, restrained math sizing,
+  semantic table finishing, active-line treatment, property-tag refinements,
+  and the selected Lucide/icon-only/circular checkbox adapters as isolated
+  personal partials.
+- Added a representative note fixture and repeatable visual checklist.
+- Disabled the remaining unconfigured presentation features at the SCSS entry
+  point while retaining general application and plugin compatibility modules.
+- Replaced inherited documentation with a concise Monolith Umbra guide and
+  aligned package, manifest, generated output, and compatibility versions at
+  `0.1.0`.
 
-### Partially complete
+### Awaiting application validation
 
 - Scheme palettes compile and switch correctly, but they have not completed
   the full dark/light UI-state and mobile visual checklist.
-- The retained table behavior is configured through Minimal's existing rules;
-  the final Monolith table experiment has not been compared and consolidated.
-- Active line, code scrolling, task strike-through, plain tags, modern tabs,
-  and table helpers remain inherited Minimal implementations and need visual
-  confirmation with Umbra palettes.
-- Checkbox preferences are present in Style Settings, but the chosen Lucide,
-  icon-only, circular behavior still needs its implementation ported and tested.
-- The inherited README has only received targeted cleanup and is not yet an
-  Umbra-specific user guide.
-
-### Not yet started or not yet validated
-
-- bordered highlights
-- isolated `kbd` styling
-- final table customization
-- math sizing and spacing
-- selected tag, code, and syntax refinements
-- representative test note and baseline screenshots
+- The personal components and inherited behavior need visual confirmation with
+  every included palette in dark and light modes.
 - systematic testing in source mode, live preview, reading view, narrow panes,
   dialogs, settings, Canvas, Bases, and mobile
-- review and pruning of the remaining unused Minimal feature and plugin modules
-- final documentation, screenshots, release packaging, and versioning
-- small, reviewable commits for the current working-tree changes
+- baseline screenshots from the real application
 
 ### Scope removed
 
@@ -366,12 +361,12 @@ Avoid combining repository management, palette work, component ports, and
 feature removal in a single commit. Small commits make regressions and upstream
 comparison much easier to manage.
 
-## Open decisions
+## Resolved decisions
 
-- Should dark and light schemes be independently selectable?
-- Which working table rules and variables form the final component?
-- Which tag and checkbox treatments are genuinely preferable to Minimal's?
-- Is Umbra permanently personal, or might it eventually be distributed?
-
-These decisions should be made through use and visual comparison rather than
-by porting everything in advance.
+- A single scheme selector controls both dark and light variants.
+- Minimal's current table implementation remains the behavioral base, with
+  semantic Monolith border, radius, and header refinements layered over it.
+- Inline tags remain plain; property tags use semantic palette pills. The
+  selected checkbox default is Lucide, icon-only, and circular.
+- Monolith Umbra remains a personal theme. Its repository still preserves the
+  metadata and licensing needed for reproducible releases.

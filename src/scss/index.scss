@@ -57,18 +57,15 @@
 @use 'features/colorful-active-states';
 @use 'features/colorful-frame';
 @use 'features/colorful-headings';
-@use 'features/focus-mode';
-@use 'features/full-width-media';
 @use 'features/helpers';
 @use 'features/helpers-tables';
-@use 'features/image-filters';
-@use 'features/image-grid';
-@use 'features/labeled-nav';
 @use 'features/link-underline';
-@use 'features/sidebar-background';
 @use 'features/tab-styles';
 @use 'features/trim-file-names';
 @use 'features/underline-headings';
+
+/* Deliberately not compiled: focus mode, full-width media, image filters,
+   image grids, labeled navigation, sidebar backgrounds, Cards, or Dataview. */
 
 @use 'mobile/mobile';
 
