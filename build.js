@@ -82,7 +82,12 @@ function build() {
 }
 
 function safeBuild() {
-	try { build(); } catch (e) { console.error(e.message); }
+	try {
+		build();
+	} catch (e) {
+		console.error(e.message);
+		if (!process.argv.includes('--watch')) process.exitCode = 1;
+	}
 }
 
 loadEnv();

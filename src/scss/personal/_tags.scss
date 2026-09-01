@@ -1,0 +1,19 @@
+/* Scheme-aware property tag pills; inline tags retain Minimal's plain default. */
+.metadata-property .multi-select-pill {
+	--umbra-pill-rgb: var(--color-blue-rgb);
+	color: var(--text-normal);
+	background-color: rgba(var(--umbra-pill-rgb), 0.12);
+	border: 1px solid rgba(var(--umbra-pill-rgb), 0.38);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n + 1) { --umbra-pill-rgb: var(--color-red-rgb); }
+.metadata-property .multi-select-pill:nth-child(6n + 2) { --umbra-pill-rgb: var(--color-orange-rgb); }
+.metadata-property .multi-select-pill:nth-child(6n + 3) { --umbra-pill-rgb: var(--color-yellow-rgb); }
+.metadata-property .multi-select-pill:nth-child(6n + 4) { --umbra-pill-rgb: var(--color-green-rgb); }
+.metadata-property .multi-select-pill:nth-child(6n + 5) { --umbra-pill-rgb: var(--color-cyan-rgb); }
+.metadata-property .multi-select-pill:nth-child(6n) { --umbra-pill-rgb: var(--color-purple-rgb); }
+
+.metadata-property .multi-select-pill:is(:hover, :focus-within) {
+	background-color: rgba(var(--umbra-pill-rgb), 0.2);
+	border-color: rgba(var(--umbra-pill-rgb), 0.65);
+}

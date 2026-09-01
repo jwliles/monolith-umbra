@@ -1,0 +1,27 @@
+/* Physical-key treatment for rendered HTML keyboard elements. */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-html-embed) kbd {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.8em;
+	margin-inline: 0.15em;
+	padding: 0.2em 0.45em;
+	color: var(--text-normal);
+	font-family: var(--font-monospace);
+	font-size: 0.9em;
+	font-weight: 400;
+	line-height: 1;
+	vertical-align: middle;
+	white-space: nowrap;
+	background: linear-gradient(to bottom, var(--background-primary-alt), var(--background-secondary));
+	border: 1px solid var(--background-modifier-border-hover);
+	border-radius: var(--radius-s);
+	box-shadow: 0 2px 0 var(--background-modifier-border-focus), 0 3px 3px rgba(0, 0, 0, 0.18);
+	transform: translateY(-1px);
+	transition: transform 80ms ease, box-shadow 80ms ease;
+}
+
+:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-html-embed) kbd:hover {
+	box-shadow: 0 1px 0 var(--background-modifier-border-focus);
+	transform: translateY(1px);
+}

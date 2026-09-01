@@ -1769,6 +1769,7 @@ body {
   --table-edge-cell-padding-last: 0;
   --table-cell-padding: 4px 10px;
   --table-header-size: var(--table-text-size);
+  --umbra-table-radius: var(--radius-s);
 }
 
 /* Preview mode tables */
@@ -1783,7 +1784,10 @@ body {
 .markdown-source-view.mod-cm6 table,
 .markdown-preview-view table {
   border: var(--border-width) solid var(--border-color);
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--umbra-table-radius);
+  overflow: hidden;
 }
 .markdown-source-view.mod-cm6 td, .markdown-source-view.mod-cm6 th,
 .markdown-preview-view td,
@@ -1809,6 +1813,13 @@ body {
 .markdown-preview-view td:last-child .table-cell-wrapper,
 .markdown-preview-view th:last-child .table-cell-wrapper {
   padding-inline-end: 0;
+}
+
+.markdown-source-view.mod-cm6 th,
+.markdown-preview-view th {
+  font-family: var(--font-monospace);
+  font-weight: 500;
+  background-color: var(--background-secondary);
 }
 
 .markdown-source-view.mod-cm6 .cm-table-widget table {
@@ -1931,12 +1942,163 @@ body,
   display: none;
 }
 
+/* Monolith Umbra components */
+/* Bordered highlights across source mode, Live Preview, and reading view. */
+body {
+  --umbra-highlight-rgb: var(--color-yellow-rgb);
+  --umbra-highlight-border-width: 1px;
+  --umbra-highlight-radius: var(--radius-s);
+  --umbra-highlight-padding-block: 0.05em;
+  --umbra-highlight-padding-inline: 0.2em;
+}
+
+.cm-s-obsidian:not(.is-live-preview) span.cm-highlight {
+  border-block: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+  padding-block: var(--umbra-highlight-padding-block);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+.cm-s-obsidian:not(.is-live-preview) :not(.cm-highlight:not(.cm-formatting-highlight)) + span.cm-formatting-highlight,
+.cm-s-obsidian:not(.is-live-preview) span.cm-formatting-highlight:first-child {
+  border-inline-start: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+  border-start-start-radius: var(--umbra-highlight-radius);
+  border-end-start-radius: var(--umbra-highlight-radius);
+  padding-inline-start: var(--umbra-highlight-padding-inline);
+}
+.cm-s-obsidian:not(.is-live-preview) .cm-highlight:not(.cm-formatting-highlight) + span.cm-formatting-highlight,
+.cm-s-obsidian:not(.is-live-preview) span.cm-highlight:last-child {
+  border-inline-end: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+  border-start-end-radius: var(--umbra-highlight-radius);
+  border-end-end-radius: var(--umbra-highlight-radius);
+  padding-inline-end: var(--umbra-highlight-padding-inline);
+}
+
+.cm-s-obsidian.is-live-preview span.cm-highlight,
+.markdown-rendered mark {
+  border: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+  border-radius: var(--umbra-highlight-radius);
+  padding: var(--umbra-highlight-padding-block) var(--umbra-highlight-padding-inline);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Physical-key treatment for rendered HTML keyboard elements. */
+:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-html-embed) kbd {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.8em;
+  margin-inline: 0.15em;
+  padding: 0.2em 0.45em;
+  color: var(--text-normal);
+  font-family: var(--font-monospace);
+  font-size: 0.9em;
+  font-weight: 400;
+  line-height: 1;
+  vertical-align: middle;
+  white-space: nowrap;
+  background: linear-gradient(to bottom, var(--background-primary-alt), var(--background-secondary));
+  border: 1px solid var(--background-modifier-border-hover);
+  border-radius: var(--radius-s);
+  box-shadow: 0 2px 0 var(--background-modifier-border-focus), 0 3px 3px rgba(0, 0, 0, 0.18);
+  transform: translateY(-1px);
+  transition: transform 80ms ease, box-shadow 80ms ease;
+}
+
+:is(.markdown-rendered, .markdown-source-view.mod-cm6 .cm-html-embed) kbd:hover {
+  box-shadow: 0 1px 0 var(--background-modifier-border-focus);
+  transform: translateY(1px);
+}
+
+/* Modest readability increase without changing MathJax layout semantics. */
+.math.math-inline {
+  font-size: 1.1em;
+}
+
+.math.math-block {
+  padding-block: 0.75em;
+}
+
+.math.math-block mjx-container,
+mjx-container[display=true] {
+  font-size: 1.2em !important;
+  margin-block: 0.75em;
+}
+
+/* Scheme-aware property tag pills; inline tags retain Minimal's plain default. */
+.metadata-property .multi-select-pill {
+  --umbra-pill-rgb: var(--color-blue-rgb);
+  color: var(--text-normal);
+  background-color: rgba(var(--umbra-pill-rgb), 0.12);
+  border: 1px solid rgba(var(--umbra-pill-rgb), 0.38);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n+1) {
+  --umbra-pill-rgb: var(--color-red-rgb);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n+2) {
+  --umbra-pill-rgb: var(--color-orange-rgb);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n+3) {
+  --umbra-pill-rgb: var(--color-yellow-rgb);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n+4) {
+  --umbra-pill-rgb: var(--color-green-rgb);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n+5) {
+  --umbra-pill-rgb: var(--color-cyan-rgb);
+}
+
+.metadata-property .multi-select-pill:nth-child(6n) {
+  --umbra-pill-rgb: var(--color-purple-rgb);
+}
+
+.metadata-property .multi-select-pill:is(:hover, :focus-within) {
+  background-color: rgba(var(--umbra-pill-rgb), 0.2);
+  border-color: rgba(var(--umbra-pill-rgb), 0.65);
+}
+
+/* Style Settings adapters for the selected Lucide, icon-only, circular defaults. */
+.mo-checkbox-circle {
+  --checkbox-radius: 50%;
+}
+
+.mo-checkbox-square {
+  --checkbox-radius: 4px;
+}
+
+.mo-icons-lucide input[type=checkbox]:checked:not([data-task]),
+.mo-icons-lucide input[type=checkbox][data-task=x]:checked {
+  --checkbox-marker-color: transparent;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m5 12 4 4L19 6'/%3E%3C/svg%3E");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 78%;
+}
+
+.mo-checkbox-icons input[type=checkbox][data-task]:not([data-task=x]):checked {
+  border-color: transparent;
+}
+
+.mo-checkbox-framed input[type=checkbox][data-task]:checked {
+  border: var(--checkbox-border-width) solid currentColor;
+  border-radius: var(--checkbox-radius);
+}
+
 /* Minimal features */
 /* Active line highlight */
 .active-line-on .workspace-leaf-content[data-type=markdown] .cm-line.cm-active,
 .active-line-on .workspace-leaf-content[data-type=markdown] .markdown-source-view.mod-cm6.is-live-preview .HyperMD-quote.cm-active {
   background-color: var(--active-line-bg);
   box-shadow: -25vw 0px var(--active-line-bg), 25vw 0 var(--active-line-bg);
+}
+.active-line-on .workspace-leaf-content[data-type=markdown] .cm-line.cm-active:not(.HyperMD-codeblock) {
+  border-inline-start: 2px solid color-mix(in srgb, var(--interactive-accent) 55%, transparent);
 }
 
 .disable-animations {

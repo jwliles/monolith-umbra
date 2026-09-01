@@ -5,4 +5,8 @@
 		background-color:var(--active-line-bg);
 		box-shadow:-25vw 0px var(--active-line-bg), 25vw 0 var(--active-line-bg);
 	}
+
+	.cm-line.cm-active:not(.HyperMD-codeblock) {
+		border-inline-start: 2px solid color-mix(in srgb, var(--interactive-accent) 55%, transparent);
+	}
 }

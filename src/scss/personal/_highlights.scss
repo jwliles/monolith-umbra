@@ -1,0 +1,42 @@
+/* Bordered highlights across source mode, Live Preview, and reading view. */
+body {
+	--umbra-highlight-rgb: var(--color-yellow-rgb);
+	--umbra-highlight-border-width: 1px;
+	--umbra-highlight-radius: var(--radius-s);
+	--umbra-highlight-padding-block: 0.05em;
+	--umbra-highlight-padding-inline: 0.2em;
+}
+
+.cm-s-obsidian:not(.is-live-preview) span.cm-highlight {
+	border-block: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+	padding-block: var(--umbra-highlight-padding-block);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}
+
+.cm-s-obsidian:not(.is-live-preview) {
+	:not(.cm-highlight:not(.cm-formatting-highlight)) + span.cm-formatting-highlight,
+	span.cm-formatting-highlight:first-child {
+		border-inline-start: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+		border-start-start-radius: var(--umbra-highlight-radius);
+		border-end-start-radius: var(--umbra-highlight-radius);
+		padding-inline-start: var(--umbra-highlight-padding-inline);
+	}
+
+	.cm-highlight:not(.cm-formatting-highlight) + span.cm-formatting-highlight,
+	span.cm-highlight:last-child {
+		border-inline-end: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+		border-start-end-radius: var(--umbra-highlight-radius);
+		border-end-end-radius: var(--umbra-highlight-radius);
+		padding-inline-end: var(--umbra-highlight-padding-inline);
+	}
+}
+
+.cm-s-obsidian.is-live-preview span.cm-highlight,
+.markdown-rendered mark {
+	border: var(--umbra-highlight-border-width) solid rgba(var(--umbra-highlight-rgb), 0.8);
+	border-radius: var(--umbra-highlight-radius);
+	padding: var(--umbra-highlight-padding-block) var(--umbra-highlight-padding-inline);
+	-webkit-box-decoration-break: clone;
+	box-decoration-break: clone;
+}

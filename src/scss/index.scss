@@ -41,6 +41,13 @@
 @use 'content/tags';
 @use 'content/text';
 
+/* Monolith Umbra components */
+@use 'personal/highlights';
+@use 'personal/kbd';
+@use 'personal/math';
+@use 'personal/tags' as personal-tags;
+@use 'personal/checkboxes';
+
 /* Minimal features */
 @use 'features/active-line';
 @use 'features/animations';

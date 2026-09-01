@@ -7,6 +7,7 @@ body {
 	--table-edge-cell-padding-last: 0;
 	--table-cell-padding: 4px 10px;
 	--table-header-size: var(--table-text-size);
+	--umbra-table-radius: var(--radius-s);
 }
 
 /* Preview mode tables */
@@ -21,7 +22,10 @@ body {
 .markdown-preview-view {
 	table {
 		border: var(--border-width) solid var(--border-color);
-		border-collapse: collapse;
+		border-collapse: separate;
+		border-spacing: 0;
+		border-radius: var(--umbra-table-radius);
+		overflow: hidden;
 	}
 	td, th {
 		padding: var(--table-cell-padding);
@@ -37,6 +41,15 @@ body {
 				padding-inline-end: 0;
 			}
 		}
+	}
+}
+
+.markdown-source-view.mod-cm6,
+.markdown-preview-view {
+	th {
+		font-family: var(--font-monospace);
+		font-weight: 500;
+		background-color: var(--background-secondary);
 	}
 }
 
