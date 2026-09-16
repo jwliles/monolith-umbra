@@ -1,19 +1,43 @@
-/* Scheme-aware property tag pills; inline tags retain Minimal's plain default. */
+/* Default property values follow the theme text color */
 .metadata-property .multi-select-pill {
-	--umbra-pill-rgb: var(--color-blue-rgb);
 	color: var(--text-normal);
-	background-color: rgba(var(--umbra-pill-rgb), 0.12);
-	border: 1px solid rgba(var(--umbra-pill-rgb), 0.38);
+	background-color: transparent;
+	border: 1px solid transparent;
 }
 
-.metadata-property .multi-select-pill:nth-child(6n + 1) { --umbra-pill-rgb: var(--color-red-rgb); }
-.metadata-property .multi-select-pill:nth-child(6n + 2) { --umbra-pill-rgb: var(--color-orange-rgb); }
-.metadata-property .multi-select-pill:nth-child(6n + 3) { --umbra-pill-rgb: var(--color-yellow-rgb); }
-.metadata-property .multi-select-pill:nth-child(6n + 4) { --umbra-pill-rgb: var(--color-green-rgb); }
-.metadata-property .multi-select-pill:nth-child(6n + 5) { --umbra-pill-rgb: var(--color-cyan-rgb); }
-.metadata-property .multi-select-pill:nth-child(6n) { --umbra-pill-rgb: var(--color-purple-rgb); }
+/* Only multi-value properties rotate colors */
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n + 1) {
+	color: rgb(var(--color-red-rgb));
+}
 
-.metadata-property .multi-select-pill:is(:hover, :focus-within) {
-	background-color: rgba(var(--umbra-pill-rgb), 0.2);
-	border-color: rgba(var(--umbra-pill-rgb), 0.65);
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n + 2) {
+	color: rgb(var(--color-orange-rgb));
+}
+
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n + 3) {
+	color: rgb(var(--color-yellow-rgb));
+}
+
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n + 4) {
+	color: rgb(var(--color-green-rgb));
+}
+
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n + 5) {
+	color: rgb(var(--color-cyan-rgb));
+}
+
+.metadata-property:is([data-property-key="tags"],
+	[data-property-key="aliases"],
+	[data-property-key="authors"]) .multi-select-pill:nth-child(6n) {
+	color: rgb(var(--color-purple-rgb));
 }

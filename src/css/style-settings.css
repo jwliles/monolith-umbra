@@ -180,37 +180,6 @@ settings:
 				label: Square
 				value: 0px
 	-
-		id: h1-style
-		title: H1 style
-		type: variable-select
-		allowEmpty: false
-		default: normal
-		options:
-			-
-				label: Normal
-				value: normal
-			-
-				label: Italic
-				value: italic
-	-
-		id: h1-variant
-		title: H1 variant
-		type: variable-select
-		allowEmpty: false
-		default: normal
-		options:
-			-
-				label: Normal
-				value: normal
-			-
-				label: Small caps
-				value: small-caps
-	-
-		id: h1-l
-		title: H1 divider line
-		type: class-toggle
-		default: false
-	-
 		id: table-settings
 		title: Tables
 		type: heading

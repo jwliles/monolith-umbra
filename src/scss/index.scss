@@ -1,8 +1,8 @@
 /* Variables */
-@use 'variables/root';
-@use 'variables/dynamic-color';
-@use 'variables/theme';
 @use 'variables/adaptive-font-size';
+@use 'variables/dynamic-color';
+@use 'variables/root';
+@use 'variables/theme';
 
 /* Obsidian */
 // @use 'dev/dev-block-width';
@@ -35,18 +35,19 @@
 @use 'content/embeds-transclusions';
 @use 'content/links';
 @use 'content/lists';
-@use 'content/preview-backlinks';
 @use 'content/pdf';
+@use 'content/preview-backlinks';
 @use 'content/tables';
 @use 'content/tags';
 @use 'content/text';
 
 /* Monolith Umbra components */
+@use 'personal/checkboxes';
 @use 'personal/highlights';
 @use 'personal/kbd';
 @use 'personal/math';
 @use 'personal/tags' as personal-tags;
-@use 'personal/checkboxes';
+@use 'personal/file_explorer';
 
 /* Minimal features */
 @use 'features/active-line';
@@ -60,6 +61,7 @@
 @use 'features/helpers';
 @use 'features/helpers-tables';
 @use 'features/link-underline';
+@use 'features/sidebar-background.scss';
 @use 'features/tab-styles';
 @use 'features/trim-file-names';
 @use 'features/underline-headings';
@@ -81,19 +83,13 @@
 
 /* Community plugins */
 @use 'plugins/calendar';
-@use 'plugins/charts';
-@use 'plugins/cmenu';
 @use 'plugins/git';
-@use 'plugins/hider';
 @use 'plugins/kanban';
-@use 'plugins/lapel';
-@use 'plugins/sortable';
 @use 'plugins/style-settings';
-@use 'plugins/zoom';
 
 /* Color schemes */
-@use 'color-schemes/umbra';
-@use 'color-schemes/resolarized';
 @use 'color-schemes/glacier';
-@use 'color-schemes/graphite';
-@use 'color-schemes/parchment';
+@use 'color-schemes/hunter';
+@use 'color-schemes/monolith';
+@use 'color-schemes/resolarized';
+@use 'color-schemes/umbra';

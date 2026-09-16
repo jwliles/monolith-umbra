@@ -145,7 +145,6 @@ defaults:
 - modern tabs
 - tag radius `14px`
 - window title visible
-- H1 line disabled, with normal style and variant
 - Lucide checkbox icons, icon treatment, and circular shape
 - Umbra selected for both dark and light modes
 

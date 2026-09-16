@@ -1,0 +1,70 @@
+/* ═══════════════════════════════════════════════════════════
+	 FILE EXPLORER - FOLDERS & FILES
+	 ═══════════════════════════════════════════════════════════ */
+
+/* File titles */
+.nav-file-title {
+		color: var(--text-normal);
+		padding: 4px 8px;
+		border-radius: var(--mo-radius-subtle);
+		transition: background-color 0.15s ease;
+}
+
+.nav-file-title:hover {
+		background-color: var(--interactive-hover);
+}
+
+.nav-file-title.is-active {
+		background-color: var(--interactive-accent);
+		color: var(--text-on-accent);
+		font-weight: 500;
+}
+
+/* Folder titles - base styling */
+.nav-folder-title {
+		padding: 4px 8px;
+		border-radius: var(--mo-radius-subtle);
+		transition: background-color 0.15s ease;
+		color: var(--text-normal);
+}
+
+.nav-folder-title:hover {
+		background-color: var(--interactive-hover);
+}
+
+/* Rainbow folder coloring - cycles through accent colors (OPTIMIZED) */
+/* Set color variable on nth-child folder elements */
+.nav-files-container > div > .nav-folder:nth-child(6n + 1),
+.nav-folder-children > .nav-folder:nth-child(6n + 1) {
+		--folder-color: var(--color-red);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 2),
+.nav-folder-children > .nav-folder:nth-child(6n + 2) {
+		--folder-color: var(--color-orange);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 3),
+.nav-folder-children > .nav-folder:nth-child(6n + 3) {
+		--folder-color: var(--color-yellow);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 4),
+.nav-folder-children > .nav-folder:nth-child(6n + 4) {
+		--folder-color: var(--color-green);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 5),
+.nav-folder-children > .nav-folder:nth-child(6n + 5) {
+		--folder-color: var(--color-teal);
+}
+
+.nav-files-container > div > .nav-folder:nth-child(6n + 6),
+.nav-folder-children > .nav-folder:nth-child(6n + 6) {
+		--folder-color: var(--color-purple);
+}
+
+/* Apply color to folder titles using the variable */
+.nav-folder-title {
+		color: var(--folder-color, var(--text-normal));
+}
